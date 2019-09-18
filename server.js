@@ -14,40 +14,64 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 
+// Tables (DATA)
+// =============================================================
+var tables = [
+  {
+    routeName: "table1",
+    name: "First Table",
+    peopleCount: 3,
+    waitTime: 30,
+  },
+  {
+    routeName: "table2",
+    name: "Second Table",
+    peopleCount: 6,
+    waitTime: 45,
+  },
+  {
+    routeName: "table3",
+    name: "Third Table",
+    peopleCount: 2,
+    waitTime: 20,
+  }
+];
+
+
 // Routes
 // =============================================================
 
 // Basic route that sends the user first to the AJAX Page
 app.get("/", function (req, res) {
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "home.html"));
 });
 
 app.get("/add", function (req, res) {
   res.sendFile(path.join(__dirname, "add.html"));
 });
 
-// Displays all characters
-app.get("/api/characters", function (req, res) {
-  return res.json(characters);
+// Displays all tables
+app.get("/api/tables", function (req, res) {
+  return res.json(tables);
 });
 
 // Displays a single character, or returns false
-app.get("/api/characters/:character", function (req, res) {
+app.get("/api/tables/:character", function (req, res) {
   const chosen = req.params.character;
 
   console.log(chosen);
 
-  for (const i = 0; i < characters.length; i++) {
-    if (chosen === characters[i].routeName) {
-      return res.json(characters[i]);
+  for (const i = 0; i < tables.length; i++) {
+    if (chosen === tables[i].routeName) {
+      return res.json(tables[i]);
     }
   }
 
   return res.json(false);
 });
 
-// Create New Characters - takes in JSON input
-app.post("/api/characters", function (req, res) {
+// Create New tables - takes in JSON input
+app.post("/api/tables", function (req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body parsing middleware
   const newCharacter = req.body;
@@ -59,7 +83,7 @@ app.post("/api/characters", function (req, res) {
 
   console.log(newCharacter);
 
-  characters.push(newCharacter);
+  tables.push(newCharacter);
 
   res.json(newCharacter);
 });
