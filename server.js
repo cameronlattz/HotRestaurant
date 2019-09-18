@@ -107,5 +107,8 @@ app.post("/api/reservations", function (req, res) {
 
       tables.push(newReservation);
 
-      res.json(newReservation;
+      res.json(newReservation);
       });
+
+      
+
