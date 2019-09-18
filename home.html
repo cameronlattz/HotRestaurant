@@ -14,10 +14,8 @@
         <h3 class="text-center">Book your seats before they are all gone!</h3>
         <p class="lead text-center">
             <br>
-  <button class="btn btn-primary btn-lg center-block">View Tables</button>
-  <!-- Note the specific Bootstrap classes -->
-  <button class="btn btn-danger btn-lg center-block">Make Reservation</button>
-  <!-- Note the specific Bootstrap classes -->
+            <button class="btn btn-primary btn-lg center-block">View Tables</button>
+            <button class="btn btn-danger btn-lg center-block">Make Reservation</button>
         </p>
       </div>
       <script>
@@ -26,15 +24,15 @@
         ).then(function(response) {
           return response.json();
         }).then(function(responseJson){
-          console.log(responseJson);
+          console.log("waitingList: " + responseJson);
         });
 
         fetch(
-          "/api/reservations",
+          "/api/reservation",
         ).then(function(response) {
           return response.json();
         }).then(function(responseJson){
-          console.log(responseJson);
+          console.log("reservation: " + responseJson);
         });
 
         const reservation = {
@@ -44,7 +42,7 @@
           uniqueId: "12345"
         }
         fetch(
-          "/api/reservations",
+          "/api/reservation",
           {
             method: "POST",
             body: JSON.stringify(reservation),
@@ -53,7 +51,7 @@
         ).then(function(response) {
           return response.json();
         }).then(function(responseJson){
-          console.log(responseJson);
+          console.log("post res: " + responseJson);
         });
       </script>
 </body>
