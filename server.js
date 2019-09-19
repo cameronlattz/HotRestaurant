@@ -53,12 +53,12 @@ app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/reserve", function (req, res) {
-  res.sendFile(path.join(__dirname, "reserve.html"));
+app.get("/reservation", function (req, res) {
+  res.sendFile(path.join(__dirname, "reservation.html"));
 });
 
-app.get("/table", function (req, res) {
-  res.sendFile(path.join(__dirname, "table.html"));
+app.get("/tables", function (req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // waiting list
