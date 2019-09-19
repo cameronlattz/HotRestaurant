@@ -3,98 +3,104 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Reservation</title>
+  <title>Bootstrap Demo Buttons</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div class="container">
     <div class="jumbotron col-md-12">
-        <h1 class="display-4 font-weight-bold text-center">Hot Restaurant</h1>
-        <hr class="my-4">
-        <h3 class="text-center">Book your seats before they are all gone!</h3>
-        <p class="lead text-center">
-            <br>
-  <button class="btn btn-danger btn-lg center-block">Make Reservation</button>
-  <button class="btn btn-primary btn-lg center-block"><a style="color: white" href="http://localhost:3000/">Home</a></button>
-        </p>
-      </div>
-    </div>
-
-    <div style="align-content: center" class="container">
-      <div class="card">
-        <div class="card-header">
-          Featured
+      <h1 class="display-4 font-weight-bold text-center">
+        <span class="fa fa-fire"></span>
+        Hot Restaurant
+      </h1>
+      <hr class="my-4">
+      <h3 class="text-center">Book your seats before they are all gone!</h3>
+      <p class="lead text-center">
+        <br>
+        <div class="text-center">
+          <a href="/tables"><button class="btn btn-lg btn-primary"><span class="fa fa-credit-card"></span> View
+              Tables</button></a>
+          <a href="/home"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
         </div>
-        <div class="card-body">
-            <form class="col-md-12">
-                <div class="form-group">
-                  <label for="exampleInputName1">Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPhone1">Phone Number</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="form-group">
-                      <label for="exampleInputID1">ID</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
-        </div>
-      </div>
-      <footer class="footer">
-        <p>
-            <a href="/api/tables">API Table Link</a>
-            |
-            <a href="/api/tables">API Table Link</a>
-        </p>
+      </p>
     </div>
   </div>
 
-    </footer>
+  <div style="align-content: center" class="container">
+    <div class="card">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <form class="col-md-12">
+          <div class="form-group">
+            <label for="exampleInputName1">Name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPhone1">Phone Number</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputID1">ID</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    <footer class="footer">
+      <p>
+        <a href="/api/tables">API Table Link</a>
+        |
+        <a href="/api/tables">API Table Link</a>
+      </p>
   </div>
-      <script>
-        fetch(
-          "/api/waitingList"
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log(responseJson);
-        });
+  </div>
 
-        fetch(
-          "/api/reservations",
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log(responseJson);
-        });
+  </footer>
+  </div>
+  <script>
+    fetch(
+      "/api/waitingList"
+    ).then(function (response) {
+      return response.json();
+    }).then(function (responseJson) {
+      console.log(responseJson);
+    });
 
-        const reservation = {
-          name: "Person reserving's name",
-          phone: "Phone number",
-          email: "Email address",
-          uniqueId: "12345"
-        }
-        fetch(
-          "/api/reservations",
-          {
-            method: "POST",
-            body: JSON.stringify(reservation),
+    fetch(
+      "/api/reservations",
+    ).then(function (response) {
+      return response.json();
+    }).then(function (responseJson) {
+      console.log(responseJson);
+    });
 
-          }
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log(responseJson);
-        });
-      </script>
+    const reservation = {
+      name: "Person reserving's name",
+      phone: "Phone number",
+      email: "Email address",
+      uniqueId: "12345"
+    }
+    fetch(
+      "/api/reservations", {
+        method: "POST",
+        body: JSON.stringify(reservation),
+
+      }
+    ).then(function (response) {
+      return response.json();
+    }).then(function (responseJson) {
+      console.log(responseJson);
+    });
+  </script>
 </body>
 
 </html>
