@@ -21,18 +21,21 @@ app.use(express.json());
 var tables = [
   {
     name: "First Table",
-    peopleCount: 3,
-    waitTime: 30
+    email: "one@email.com",
+    phone: "123-4567",
+    uniqueId: "324535"
   },
   {
     name: "Second Table",
-    peopleCount: 6,
-    waitTime: 45
+    email: "two@email.com",
+    phone: "123-4567",
+    uniqueId: "9450945"
   },
   {
     name: "Third Table",
-    peopleCount: 2,
-    waitTime: 20
+    email: "three@email.com",
+    phone: "123-4567",
+    uniqueId: "04380"
   }
 ];
 
@@ -73,7 +76,6 @@ app.get("/api/reservation", function (req, res) {
 // post requests
 app.post("/api/reservation", function (req, res) {
   const newReservation = req.body;
-  console.log(newReservation);
   if (tables.length < MAX_TABLES) {
     tables.push(newReservation);
     res.json(true);
