@@ -44,7 +44,7 @@
                       <label for="exampleInputID1">ID</label>
                       <input type="number" class="form-control" id="exampleInputPassword1">
                     </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button onclick="submitFunction();" type="submit" class="btn btn-primary">Submit</button>
               </form>
         </div>
       </div>
@@ -61,6 +61,7 @@
   </div>
       <script>
       
+      function submitFunction(){
       const reservation = {
           name: "Person reserving's name",
           phone: "Phone number",
@@ -68,7 +69,7 @@
           uniqueId: "12345"
         }
         fetch(
-          "/api/reservations",
+          "/api/reservation",
           {
             method: "POST",
             body: JSON.stringify(reservation),
@@ -79,6 +80,8 @@
         }).then(function(responseJson){
           console.log(responseJson);
         });
+      }
+
       </script>
 </body>
 
