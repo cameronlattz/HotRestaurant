@@ -50,25 +50,6 @@
         }).then(function(responseJson){
           console.log("reservation: " + responseJson);
         });
-
-        const reservation = {
-          name: "Person reserving's name",
-          phone: "Phone number",
-          email: "Email address",
-          uniqueId: "12345"
-        }
-        fetch(
-          "/api/reservation",
-          {
-            method: "POST",
-            body: JSON.stringify(reservation),
-
-          }
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log("post res: " + responseJson);
-        });
       </script>
 </body>
 

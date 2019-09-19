@@ -30,7 +30,7 @@
             <form class="col-md-12">
                 <div class="form-group">
                   <label for="exampleInputName1">Name</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPhone1">Phone Number</label>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <input type="email" class="form-control" id="exampleInputPassword1">
                   </div>
                   <div class="form-group">
                       <label for="exampleInputID1">ID</label>
@@ -60,23 +60,8 @@
     </footer>
   </div>
       <script>
-        fetch(
-          "/api/waitingList"
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log(responseJson);
-        });
-
-        fetch(
-          "/api/reservations",
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log(responseJson);
-        });
-
-        const reservation = {
+      
+      const reservation = {
           name: "Person reserving's name",
           phone: "Phone number",
           email: "Email address",
