@@ -8,20 +8,18 @@
 </head>
 
 <body>
-  <div style="align-content: center" class="container">
+  <div class="container">
     <div class="jumbotron col-md-12">
         <h1 class="display-4 font-weight-bold text-center">Hot Restaurant</h1>
         <hr class="my-4">
         <h3 class="text-center">Book your seats before they are all gone!</h3>
         <p class="lead text-center">
             <br>
-  <button class="btn btn-danger btn-lg center-block">Make Reservation</button>
-  <button class="btn btn-primary btn-lg center-block">Home</button>
+            <button class="btn btn-danger btn-lg center-block">Make Reservation</button>
+            <button class="btn btn-primary btn-lg center-block">Home</button>
         </p>
       </div>
     </div>
-
-    <div style="align-content: center" class="container">
     <div class="card">
         <div class="card-header">
           Featured
@@ -49,19 +47,14 @@
         </div>
       </div>
     </div>
-  
-<footer class="footer">
-  <div class="container">
-    <p>
-        <a href="/api/tables">API Table Link</a>
-|
-        <a href="/api/tables">API Table Link</a>
-    </p>
+    <footer class="footer">
+      <p>
+          <a href="/api/tables">API Table Link</a>
+          |
+          <a href="/api/tables">API Table Link</a>
+      </p>
+    </footer>
   </div>
-</footer>
-
-
-
       <script>
         fetch(
           "/api/waitingList"
