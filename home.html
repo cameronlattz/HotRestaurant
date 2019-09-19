@@ -11,37 +11,39 @@
 <body>
   <div class="container">
     <div class="jumbotron">
-        <h1 class="display-4 font-weight-bold text-center">
-          <span class="fa fa-fire"></span>
-          Hot Restaurant
-        </h1>
-        <hr class="my-4">
-        <h3 class="text-center">Book your seats before they are all gone!</h3>
-        <p class="lead text-center">
-            <br>
-            <a class="btn btn-primary btn-lg" href="/tables">
-              <span class="fa fa-list-alt"></span>
-              View Tables
-            </a>
-              <a class="btn btn-danger btn-lg" href="/reservation">
-              Make Reservation
-            </a>
-        </p>
+      <h1 class="display-4 font-weight-bold text-center">
+        <span class="fa fa-fire"></span>
+        Hot Restaurant
+      </h1>
+      <hr class="my-4">
+      <h3 class="text-center">Book your seats before they are all gone!</h3>
+      <p class="lead text-center">
+        <br>
+        <a class="btn btn-primary btn-lg" href="/tables">
+          <span class="fa fa-list-alt"></span>
+          View Tables
+        </a>
+
+        <a class="btn btn-danger btn-lg" href="/reservation">
+          <span class="fa fa-credit-card"></span>
+          Make Reservation
+        </a>
+      </p>
     </div>
     <footer class="footer">
-        <p>
-          <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
-        </p>
+      <p>
+        <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
+      </p>
     </footer>
   </div>
-      <script>
-        fetch(
-          "/api/waitingList"
-        ).then(function(response) {
-          return response.json();
-        }).then(function(responseJson){
-          console.log("waitingList: " + responseJson);
-        });
+  <script>
+    fetch(
+      "/api/waitingList"
+    ).then(function (response) {
+      return response.json();
+    }).then(function (responseJson) {
+      console.log("waitingList: " + responseJson);
+    });
 
         fetch(
           "/api/reservation",

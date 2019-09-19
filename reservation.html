@@ -3,23 +3,30 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Reservation</title>
+  <title>Bootstrap Demo Buttons</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
   <div class="container">
     <div class="jumbotron col-md-12">
-        <h1 class="display-4 font-weight-bold text-center">Hot Restaurant</h1>
-        <hr class="my-4">
-        <h3 class="text-center">Book your seats before they are all gone!</h3>
-        <p class="lead text-center">
-            <br>
-  <a class="btn btn-danger btn-lg center-block" style="color: white" href="/tables">View Tables</a>
-  <a class="btn btn-primary btn-lg center-block" style="color: white" href="/">Home</a>
-        </p>
-      </div>
+      <h1 class="display-4 font-weight-bold text-center">
+        <span class="fa fa-fire"></span>
+        Hot Restaurant
+      </h1>
+      <hr class="my-4">
+      <h3 class="text-center">Book your seats before they are all gone!</h3>
+      <p class="lead text-center">
+        <br>
+        <div class="text-center">
+          <a href="/tables"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> View
+              Tables</button></a>
+          <a href="/home"><button class="btn btn-lg btn-primary"><span class="fa fa-home"></span></button></a>
+        </div>
+      </p>
     </div>
+  </div>
 
     <div style="align-content: center" class="container">
       <div class="card">
@@ -48,16 +55,17 @@
               </form>
         </div>
       </div>
-      <footer class="footer">
-        <p>
-            <a href="/api/tables">API Table Link</a>
-            |
-            <a href="/api/tables">API Table Link</a>
-        </p>
     </div>
+    <footer class="footer">
+      <p>
+        <a href="/api/tables">API Table Link</a>
+        |
+        <a href="/api/tables">API Table Link</a>
+      </p>
+  </div>
   </div>
 
-    </footer>
+  </footer>
   </div>
       <script>
       

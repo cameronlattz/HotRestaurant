@@ -2,17 +2,21 @@
 <html lang="en-us">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Bootstrap Demo Buttons</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <title>Bootstrap Demo Buttons</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4 font-weight-bold text-center">Hot Restaurant</h1>
+            <h1 class="display-4 font-weight-bold text-center">
+              <span class="fa fa-fire"></span>
+              Hot Restaurant
+            </h1>
             <hr class="my-4">
-            <h3 class="text-center">Current reservations and waiting list!</h3>
+            <h3 class="text-center">Current Reservations and Waiting List!</h3>
             <p class="lead text-center">
                 <br>
                 <!-- <button class="btn btn-danger btn-lg center-block">Make Reservation</button>
@@ -21,7 +25,11 @@
                 <div class="text-center">
                     <a href="/reservation"><button class="btn btn-lg btn-danger"><span class="fa fa-credit-card"></span> Make
                             Reservation</button></a>
+<<<<<<< HEAD
+                    <a href="/reservation"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
+=======
                     <a href="/"><button class="btn btn-lg btn-primary"><span class="fa fa-home">Home</span></button></a>
+>>>>>>> 75ff866a1429dd85718a661bfcfb7bd0ed8bd71d
                 </div>
             </p>
         </div>
@@ -79,4 +87,10 @@
         });
     </script>
 </body>
+
+  <footer class="footer">
+        <p>
+          <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a>
+        </p>
+    </footer>
 </html>
