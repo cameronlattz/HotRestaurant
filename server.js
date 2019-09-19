@@ -7,6 +7,8 @@ const path = require("path");
 // =============================================================
 const app = express();
 const PORT = process.env.PORT || 3000;
+const MAX_TABLES = 5;
+const waitingList = [];
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({
@@ -18,22 +20,19 @@ app.use(express.json());
 // =============================================================
 var tables = [
   {
-    routeName: "table1",
     name: "First Table",
     peopleCount: 3,
-    waitTime: 30,
+    waitTime: 30
   },
   {
-    routeName: "table2",
     name: "Second Table",
     peopleCount: 6,
-    waitTime: 45,
+    waitTime: 45
   },
   {
-    routeName: "table3",
     name: "Third Table",
     peopleCount: 2,
-    waitTime: 20,
+    waitTime: 20
   }
 ];
 
@@ -63,7 +62,7 @@ app.get("/tables", function (req, res) {
 
 // waiting list
 app.get("/api/waitingList", function (req, res) {
-  return res.json(tables);
+  return res.json(waitingList);
 });
 
 // reservations
@@ -75,6 +74,11 @@ app.get("/api/reservation", function (req, res) {
 app.post("/api/reservation", function (req, res) {
   const newReservation = req.body;
   console.log(newReservation);
-  tables.push(newReservation);
-  res.json(tables);
+  if (tables.count < MAX_TABLES) {
+    tables.push(newReservation);
+    res.json(true);
+  } else {
+    waitingList.push(newReservation);
+    res.json(false);
+  }
 });
