@@ -74,7 +74,7 @@ app.get("/api/reservation", function (req, res) {
 app.post("/api/reservation", function (req, res) {
   const newReservation = req.body;
   console.log(newReservation);
-  if (tables.count < MAX_TABLES) {
+  if (tables.length < MAX_TABLES) {
     tables.push(newReservation);
     res.json(true);
   } else {
